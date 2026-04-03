@@ -1,0 +1,87 @@
+{
+  "manifest_version": "0.1.0",
+  "config_schema": {
+    "type": "object",
+    "properties": {
+      "green_openai_api_key": {
+        "type": "string"
+      },
+      "retrieval_hf_token": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "green_openai_api_key"
+    ],
+    "additionalProperties": false
+  },
+  "components": {
+    "gateway": {
+      "manifest": "https://raw.githubusercontent.com/RDI-Foundation/agentbeats-gateway/refs/tags/v0.3/amber-manifest.json5",
+      "config": {
+        "assessment_config": {},
+        "participant_roles": {
+          "green": "green",
+          "purple1": "agent",
+          "purple2": "retrieval"
+        },
+        "callback_urls": {}
+      }
+    },
+    "green": {
+      "manifest": "https://raw.githubusercontent.com/jngan00/browsecomp-plus-green/refs/heads/main/amber-manifest.json5",
+      "config": {
+        "openai_api_key": "${config.green_openai_api_key}"
+      }
+    },
+    "agent": {
+      "manifest": "https://raw.githubusercontent.com/jngan00/browsecomp-plus-dummy-purple/refs/heads/main/amber-manifest.json5",
+      "config": {}
+    },
+    "retrieval": {
+      "manifest": "https://raw.githubusercontent.com/jngan00/browsecomp-plus-retrieval-purple/refs/heads/main/amber-manifest.json5",
+      "config": {
+        "hf_token": "${config.retrieval_hf_token}"
+      }
+    }
+  },
+  "bindings": [
+    {
+      "to": "#gateway.green",
+      "from": "#green.a2a"
+    },
+    {
+      "to": "#gateway.purple1",
+      "from": "#agent.a2a"
+    },
+    {
+      "to": "#gateway.purple2",
+      "from": "#retrieval.a2a"
+    },
+    {
+      "to": "#green.proxy",
+      "from": "#gateway.proxy",
+      "weak": true
+    },
+    {
+      "to": "#agent.proxy",
+      "from": "#gateway.proxy",
+      "weak": true
+    },
+    {
+      "to": "#retrieval.proxy",
+      "from": "#gateway.proxy",
+      "weak": true
+    }
+  ],
+  "exports": {
+    "results": "#gateway.results"
+  },
+  "metadata": {
+    "agentbeats_ids": {
+      "green": "019d4c36-72d1-74b2-964e-f33d39ba73b6",
+      "agent": "019d4c37-fd2d-7102-961a-a4db7cf6512d",
+      "retrieval": "019d4c38-7a1b-7241-a7fa-d2f2d52cee91"
+    }
+  }
+}
