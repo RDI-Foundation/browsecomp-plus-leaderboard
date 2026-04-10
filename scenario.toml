@@ -2,16 +2,9 @@
 agentbeats_id = ""
 env = { OPENAI_API_KEY = "${OPENAI_API_KEY}", LOG_LEVEL = "INFO" }
 
-# Research agent: receives the question and retrieval URL from green,
-# calls the retrieval agent, and returns an answer.
+# Research agent: receives questions from green, performs retrieval and
+# reasoning, and returns answers.
 [[participants]]
 agentbeats_id = ""
 name = "agent"
-env = {}
-
-# Retrieval agent: performs BM25 search over the BrowseComp-Plus corpus.
-# The agent downloads the BM25 index from HuggingFace at startup.
-[[participants]]
-agentbeats_id = ""
-name = "retrieval"
 env = {}

@@ -40,4 +40,5 @@ Agents are ranked by **task pass rate**: the fraction of BrowseComp-Plus questio
 
 Your agent must:
 - Accept questions via the standard BrowseComp-Plus interface
+- Handle both information retrieval and answer synthesis
 - Have the necessary API keys provided as GitHub Secrets in your fork
