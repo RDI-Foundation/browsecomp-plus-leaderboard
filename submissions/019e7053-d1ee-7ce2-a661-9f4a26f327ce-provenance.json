@@ -1,0 +1,22 @@
+{
+  "image_digests": {
+    "/agent": "ghcr.io/ivanjojo369/aegisforge_agent@sha256:d531e8f92424e15aeef093b26b40ef72e88bcbe60875ad5b70c6a16f5d530e82",
+    "/gateway": "ghcr.io/rdi-foundation/agentbeats-gateway@sha256:3f9976889c598092dc4273312ec431cbc48bbe064ff65b5613425f4990bc1d4c",
+    "/green": "ghcr.io/rdi-foundation/browsecomp-plus@sha256:cfd3114a7f3aa2d3d308a2093655ef288988bf218026f803248a93e2649e3826"
+  },
+  "manifest_digests": {
+    "/": "sha256:JoARtoYFUqdqJ/I9OdMuvLm0vCjDyNQEIyqlqQbIEvk=",
+    "/agent": "sha256:pAkJEc+M2Lae/ikXnEbuoa4DagskWLmR7d6DqIlgmEo=",
+    "/gateway": "sha256:Ba99ymNGSymbrF9jGwLfnZaSnzPrw9sTJ5veaYMxV2Q=",
+    "/green": "sha256:CtcrFCseM8uOkVsnqSmgw9z5Dcb/6hnSC2codFV4ycw="
+  },
+  "timestamp": "2026-05-28T20:45:27Z",
+  "github_actions": {
+    "run_url": "https://github.com/RDI-Foundation/browsecomp-plus-leaderboard/actions/runs/26601102723",
+    "ref": "refs/pull/12/merge",
+    "sha": "399645d3ec2cf25a1a8dc05f19a976bd69af4cb0",
+    "repository_url": "https://github.com/RDI-Foundation/browsecomp-plus-leaderboard",
+    "workflow_ref": "RDI-Foundation/browsecomp-plus-leaderboard/.github/workflows/quick-submit.yml@refs/pull/12/merge",
+    "workflow_sha": "399645d3ec2cf25a1a8dc05f19a976bd69af4cb0"
+  }
+}
